@@ -1,0 +1,89 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Optimization
+@using Libraries.Core.Backend.Helpers
+@using Translations
+@model Modules.Core.Accounts.LoginModel
+@{
+    Layout = "~/Layouts/Base.cshtml";
+}
+@section pagetitle
+{
+    @I18NEngine.GetMvcHtmlString("modules.core.accounts.login", "title")    
+}
+@section headscripts
+{
+    @if (Model.IsVisibleRecaptcha)
+    {
+        @Html.JsScriptLink(new Uri("https://www.google.com/recaptcha/api.js"))
+    }
+}
+@section stylesheet
+{
+    @Styles.Render("~/Modules/Accounts/Login/css")
+}
+
+<div class="container" style="padding-top: 10vh">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="row no-gutter">
+                <div class="text-align-center">
+                    <h2>@I18NEngine.GetMvcHtmlString("modules.core.accounts.login", "entrance")</h2>
+                </div>
+                @using (Html.BeginForm("Login", "Accounts", new {ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    <div class="form-group text-align-center">
+                        <h4>@I18NEngine.GetMvcHtmlString("modules.core.accounts.login", "greeting")</h4>
+                        @Html.ValidationSummary(true, "", new { @class= "text-danger validation-summary" })
+                    </div>
+                    <div class="col-md-offset-3 col-md-6">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="control-label" for="@Html.IdFor(m=>m.Account)">@I18NEngine.GetMvcHtmlString("modules.core.accounts.login", "account")</label>                                
+                            </div>
+                            <div class="col-md-9">
+                                @Html.TextBoxFor(m => m.Account, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Account, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="row padding-top-15">
+                            <div class="col-md-3">
+                                <label class="control-label" for="@Html.IdFor(m=>m.Password)">@I18NEngine.GetMvcHtmlString("modules.core.accounts.login", "password")</label>                                
+                            </div>
+                            <div class="col-md-9">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })                                
+                            </div>                            
+                        </div>
+                        <div class="row padding-top-15">
+                            <div class="col-md-offset-3 col-md-6">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                <label class="control-label" for="@Html.IdFor(m=>m.RememberMe)" style="padding-left: 5px;">@I18NEngine.GetMvcHtmlString("modules.core.accounts.login", "remember_me")</label>
+                            </div>
+                        </div>
+                        <div class="row padding-top-15">
+                            <div class="col-md-offset-3 col-md-6">
+                                @*<a href="@Url.Action("Index", "Registration")">@I18NEngine.GetMvcHtmlString("modules.core.accounts.login", "registration_link")</a>*@
+                            </div>
+                        </div>
+                        <div class="row padding-top-15">
+                            <div class="col-md-offset-3 col-md-9">
+                                @if (Model.IsVisibleRecaptcha)
+                                {
+                                    <div class="row padding-bottom-15">
+                                        <div class="col-md-12 g-recaptcha" data-sitekey="6LdLbSoUAAAAAIQeJXyWANrluHNVaXXzyyiJnJCX"></div>
+                                    </div>
+                                }
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="submit" value="@I18NEngine.GetMvcHtmlString("modules.core.accounts.login", "button_login")" class="btn btn-primary col-md-6"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

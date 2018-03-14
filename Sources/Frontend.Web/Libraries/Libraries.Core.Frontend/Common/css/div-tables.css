@@ -1,0 +1,40 @@
+﻿.div-table {
+    display: table;
+    width: 100%;
+}
+
+.div-table-body {
+    display: table-row-group;
+    width: 100%;
+}
+
+.div-table-header {
+    display: table-header-group;
+    width: 100%;
+}
+
+.div-table-foot {
+    display: table-footer-group;
+    width: 100%;
+}
+
+.div-table-row {
+    display: table-row;
+    width: 100%;
+}
+
+.div-table-head-cell {
+    display: table-cell;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.div-table-cell {
+    display: table-cell;
+    padding: 10px;
+}
+
+.div-table-cell-button {
+    display: table-cell;
+    padding: 5px 10px;
+}

@@ -1,0 +1,20 @@
+FATAL 2018-02-14 06:15:17 [8] System.InvalidOperationException: Последовательность не содержит соответствующий элемент
+   в System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   в Libraries.Core.Backend.Common.AppDomainExtended.FindController(IEnumerable`1 assemblies, Type interfaceController, String controllerName) в E:\Work\Atlant.io\Sources\Frontend.Web.Core\Libraries\Libraries.Core.Backend\Common\AppDomainExtended.cs:строка 33
+   в Libraries.Core.Backend.Common.AppDomainExtended.FindController(AppDomain sender, String controllerName) в E:\Work\Atlant.io\Sources\Frontend.Web.Core\Libraries\Libraries.Core.Backend\Common\AppDomainExtended.cs:строка 20
+   в Libraries.Core.Backend.Common.UnityControllerFactory.CreateController(RequestContext requestContext, String controllerName) в E:\Work\Atlant.io\Sources\Frontend.Web.Core\Libraries\Libraries.Core.Backend\Common\ControllerFactory.cs:строка 26
+   в System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   в System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   в System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   в System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   в System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+FATAL 2018-02-14 06:23:17 [1] System.Exception: Test Exception
+   в Frontend.Web.MvcApplication.Application_Start() в E:\Work\Atlant.io\Sources\Frontend.Web\Global.asax.cs:строка 31
+FATAL 2018-02-14 06:32:48 [1] System.Exception: Test Exception
+   в Frontend.Web.MvcApplication.Application_Start() в E:\Work\Atlant.io\Sources\Frontend.Web\Global.asax.cs:строка 31
+FATAL 2018-02-14 06:36:01 [1] System.Exception: Test Exception
+   в Frontend.Web.MvcApplication.Application_Start() в E:\Work\Atlant.io\Sources\Frontend.Web\Global.asax.cs:строка 31
+FATAL 2018-02-14 06:43:41 [1] System.Exception: Test Exception
+   в Frontend.Web.MvcApplication.Application_Start() в E:\Work\Atlant.io\Sources\Frontend.Web\Global.asax.cs:строка 31
+FATAL 2018-02-14 07:25:30 [1] System.Exception: Test Exception
+   в Frontend.Web.MvcApplication.Application_Start() в E:\Work\Atlant.io\Sources\Frontend.Web\Global.asax.cs:строка 31

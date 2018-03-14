@@ -1,0 +1,1 @@
+"..\Core.Bitcon.Service.exe" install

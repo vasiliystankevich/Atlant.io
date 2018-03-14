@@ -1,0 +1,28 @@
+﻿@using System.Web.Mvc
+@using System.Web.Mvc.Html
+@using System.Web.Optimization
+@model Modules.Site.Home.HomeModel
+@using Translations
+@{
+    Layout = "~/Layouts/Base.cshtml";
+}
+@section pagetitle
+{
+    @I18NEngine.GetMvcHtmlString("modules.site.home.index", "title")
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>@I18NEngine.GetMvcHtmlString("modules.site.home.index", "header1")</h1>
+            <br/>
+            <h3>@I18NEngine.GetMvcHtmlString("modules.site.home.index", "header3")</h3>
+            <ul>
+                @foreach (var module in Model.Modules)
+                {
+                    <li>@module</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@using System.Web.Mvc.Html
+@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            @RenderSection("pagetitle", false)
+        </title>
+        @Styles.Render("~/Libraries/Components/Preloader/css")
+        @Styles.Render("~/Themes/startbootstrap-sb-admin-2/css")
+        @Styles.Render("~/Libraries/Common/css")
+        @RenderSection("stylesheet", false)
+        @Scripts.Render("~/Themes/startbootstrap-sb-admin-2/js")
+        @Scripts.Render("~/Libraries/Common/js")
+        @Scripts.Render("~/Libraries/Components/WebApi/js")
+        @Scripts.Render("~/Libraries/Components/WebApi/Common/js")
+        @RenderSection("headscripts", false)
+    </head>
+    <body>
+        <div id="preloader">        
+            <div id="status">&nbsp;</div>
+        </div>    
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    @Html.ActionLink("Test work with bitcoin network", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="navbar-header">
+                        @Html.ActionLink("Exit", "Logout", "Accounts", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>                    
+                }
+            </div>
+        </div>
+        @RenderBody()
+        @RenderSection("bodyscripts", required: false)
+        @Scripts.Render("~/Libraries/Components/Preloader/js")
+    </body>
+</html>

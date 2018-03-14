@@ -1,0 +1,8 @@
+﻿title=[TestTask. entrance system]
+entrance=[entrance]
+greeting=[use the local account to sign in.]
+button_login=[login]
+account=[account]
+password=[password]
+remember_me=[remember me]
+registration_link=[registration link]

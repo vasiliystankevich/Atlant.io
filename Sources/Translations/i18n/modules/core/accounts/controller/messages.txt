@@ -1,0 +1,2 @@
+﻿login_error_verify=[account or password is incorrect]
+login_error_captcha=[error captcha]
