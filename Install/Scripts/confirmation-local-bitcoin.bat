@@ -1,1 +1,0 @@
-bitcoin-cli.exe -rpcuser=ageron -rpcpassword=nxHFyPtKNKabbP -regtest generate 1
