@@ -1,0 +1,1 @@
+bitcoind.exe -conf=bitcoin.conf -rpcuser=ageron -rpcpassword=nxHFyPtKNKabbP -regtest -datadir=E:\BitcoinNodeServerData
